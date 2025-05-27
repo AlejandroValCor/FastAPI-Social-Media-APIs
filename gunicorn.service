@@ -1,0 +1,14 @@
+[Unit]
+Description=gunicorn instance for FastAPI Social Media APIs prod app
+After=network.target
+
+[Service]
+User=xycor
+Group=xycor
+WorkingDirectory=/home/xycor/app/src/
+Environment="PATH=/home/xycor/app/venv/bin"
+EnvironmentFile=/home/xycor/.env
+ExecStart=/home/xycor/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target
