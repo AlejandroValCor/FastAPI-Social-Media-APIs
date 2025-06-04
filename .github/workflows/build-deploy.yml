@@ -61,4 +61,4 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/fastapi-social-media-docker-repository:GitHub-Actions-Latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-social-media-docker-repository:GitHub-Actions-Latest
